@@ -5,6 +5,14 @@ import user_icon from '../assets/person.png';
 import email_icon from '../assets/email.png';
 import password_icon from '../assets/password.png';
 
+import axios from "axios";
+import { navigate } from "react-router-dom";
+
+
+    const api = axios.create({
+        baseURL: 'http://localhost:3000',
+    });
+
 const LoginSignup = () => {
 
     const[action,setAction] = useState("Login");
@@ -35,10 +43,11 @@ const LoginSignup = () => {
                     <input type="password" placeholder="Password"/>
                 </div>
                 
+                
 
             </div>
 
-            {action === "Sign Up"? <div></div>:<div className="forgot-password">Lost Password ? <span>Click Here!</span></div>}
+            {action === "Sign Up"? <div></div>:<div className="forgot-password">Lost Password ? <span onClick={() => setAction("Sign Up")} style={{cursor: 'pointer', color: '#4c00b4'}}>Click Here!</span></div>}
             
 
             <div className="submit-container">
