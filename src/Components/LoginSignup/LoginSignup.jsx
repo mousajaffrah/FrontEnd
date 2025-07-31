@@ -51,7 +51,7 @@ const LoginSignup = () => {
                 navigate('/dashboard');
             } else {
                 console.log('Attempting signup...');
-                const response = await api.post('/api/registration', {
+                const response = await api.post('/api/register', {
                     name: formData.name,
                     email: formData.email,
                     password: formData.password
